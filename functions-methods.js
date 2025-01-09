@@ -66,7 +66,7 @@ function checkEmailValidity(email) {
  if (!(email.indexOf(",") <= 0)) { // making sure there are no ,
      emailValid = false;
  }
- if (email.charAt(email.length -1) === ".") { // making sure there are no . at the end
+ if (email.trim().charAt(email.trim().length -1) === ".") { // making sure there are no . at the end
      emailValid = false;
  }
  if (email.trim().indexOf(" ") >= 0) { // making sure there are no blank spaces inbetween
@@ -75,8 +75,8 @@ function checkEmailValidity(email) {
  return emailValid;
 }
 
-console.log(checkEmailValidity("n.eeken@novi.nl"))
+console.log(checkEmailValidity("n.eeken@novi.nl "))
 console.log(checkEmailValidity("tessmellink@novi.nl"))
 console.log(checkEmailValidity("n.eekennovi.nl"))
-console.log(checkEmailValidity("n.eeken@novinl."))
+console.log(checkEmailValidity("n.eeken@novinl. "))
 console.log(checkEmailValidity("tessmellink@novi,nl"))
