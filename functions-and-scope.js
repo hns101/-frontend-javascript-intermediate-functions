@@ -106,3 +106,16 @@ averageGrade([8, 9, 4, 6, 10])
 // highestGrade(grades) geeft 9
 // highestGrade([6, 4, 5]) geeft 6
 // highestGrade([8, 9, 4, 6, 10]) geeft 10
+
+function highestGrade(array) {
+    let highestNum= 0;
+    for (let i = 0; i < array.length; i++) {
+        if(array[i] >= highestNum) {
+            highestNum = array[i];
+        }
+    }
+    console.log(`Highest Grade in this array = ${highestNum}`);
+}
+highestGrade(grades);
+highestGrade([6, 4, 5]);
+highestGrade([8, 9, 4, 6, 10]);
