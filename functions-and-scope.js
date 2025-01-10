@@ -6,6 +6,7 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 
 /* Opdracht  1: Cum Laude */
 
+
 /* 1a: Script schrijven  */
 // De administratie moet weten hoeveel studenten er dit blok cum laude zijn afgestudeerd (8 of hoger). Daar moeten namelijk speciale diploma's voor besteld worden.
 // Schrijf de stapjes om dit te kunnen checken eerst uit en vraag jezelf de volgende dingen af:
@@ -15,7 +16,6 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // Log het antwoord in de terminal.
 
 // ---- Verwachte uitkomst: 6
-
 
 /*  1b: Omschrijven tot een herbruikbare functie   */
 // Schrijf een functie genaamd cumLaude, die een array van cijfers verwacht (zoals grades) en het aantal Cum laude studenten teruggeeft. Gebruik hiervoor jouw antwoord van 1a.
@@ -28,6 +28,20 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // cumLaude([8, 9, 4, 6, 10]) geeft 3
 
 
+
+function cumLaudeChecker(array) {
+    let cumLaudeAmount= 0;
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] >= 8) {
+            cumLaudeAmount++;
+        }
+    }
+    console.log(`The amount of cum laude grades in this array = ${cumLaudeAmount}`);
+}
+
+cumLaudeChecker(grades);
+cumLaudeChecker([6, 4, 5]);
+cumLaudeChecker([8, 9, 4, 6, 10]);
 
 
 /* Opdracht  2: Gemiddeld cijfer */
@@ -58,8 +72,18 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // Zorg ervoor dat het gemiddelde cijfer dat wordt teruggegeven uit de functie netjes wordt afgerond op twee decimalen.
 // Tip: Google is your best friend!
 
+function averageGrade(array) {
+    let sumToAverage = 0;
+    for (let i = 0; i < array.length; i++) {
+        sumToAverage += array[i];
+    }
+    sumToAverage = sumToAverage / array.length;
+    console.log("Average from this array = "+sumToAverage.toFixed(2));
+}
 
-
+averageGrade(grades);
+averageGrade([6, 4, 5]);
+averageGrade([8, 9, 4, 6, 10])
 
 /* Bonusopdracht: hoogste cijfer */
 
@@ -82,3 +106,16 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // highestGrade(grades) geeft 9
 // highestGrade([6, 4, 5]) geeft 6
 // highestGrade([8, 9, 4, 6, 10]) geeft 10
+
+function highestGrade(array) {
+    let highestNum= 0;
+    for (let i = 0; i < array.length; i++) {
+        if(array[i] >= highestNum) {
+            highestNum = array[i];
+        }
+    }
+    console.log(`Highest Grade in this array = ${highestNum}`);
+}
+highestGrade(grades);
+highestGrade([6, 4, 5]);
+highestGrade([8, 9, 4, 6, 10]);
