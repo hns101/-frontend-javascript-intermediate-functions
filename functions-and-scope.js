@@ -72,8 +72,18 @@ cumLaudeChecker([8, 9, 4, 6, 10]);
 // Zorg ervoor dat het gemiddelde cijfer dat wordt teruggegeven uit de functie netjes wordt afgerond op twee decimalen.
 // Tip: Google is your best friend!
 
+function averageGrade(array) {
+    let sumToAverage = 0;
+    for (let i = 0; i < array.length; i++) {
+        sumToAverage += array[i];
+    }
+    sumToAverage = sumToAverage / array.length;
+    console.log("Average from this array = "+sumToAverage.toFixed(2));
+}
 
-
+averageGrade(grades);
+averageGrade([6, 4, 5]);
+averageGrade([8, 9, 4, 6, 10])
 
 /* Bonusopdracht: hoogste cijfer */
 
